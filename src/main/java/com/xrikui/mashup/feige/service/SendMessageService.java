@@ -19,19 +19,19 @@ public class SendMessageService {
 
     private RestTemplate restTemplate = new RestTemplate();
 
-    public void send(String stockName, BigDecimal currentPrice, BigDecimal nowRate, BigDecimal lastRate) {
+    public void send(String stockName, BigDecimal currentPrice, String nowRate, String lastRate) {
         SendMessageRequestDto sendMessageRequestDto = new SendMessageRequestDto();
         sendMessageRequestDto.setSecret("9ec4e9dd4a2754039440919748a5b9d8");
         sendMessageRequestDto.setApp_key("c767b545a3875c29b1ea4e0386b9c928");
         sendMessageRequestDto.setTemplate_id("vZykWq7A36LwE4huJFPuUq42bkMZ0FWMl8-ghBu3CM4");
 
         Detail first = new Detail();
-        first.setValue("当前价格:" + currentPrice + ",当前涨跌率:" + nowRate);
-        first.setColor("#173177");
+        first.setValue("当前价格:" + currentPrice + ", 当前涨跌率:" + nowRate);
+        first.setColor("#FF0000");
 
         Detail keyword1 = new Detail();
         keyword1.setValue(stockName);
-        keyword1.setColor("#173177");
+        keyword1.setColor("#FF0000");
 
         Detail keyword2 = new Detail();
         keyword2.setValue(DateUtil.format(new Date(), DateTimeUtils.yyyyMMddHHmmss));
@@ -39,7 +39,7 @@ public class SendMessageService {
 
         Detail remark = new Detail();
         remark.setValue("较上次记录涨跌浮:" + lastRate);
-        remark.setColor("#173177");
+        remark.setColor("#FF0000");
 
         DataDetail dataDetail = new DataDetail();
         dataDetail.setFirst(first);
