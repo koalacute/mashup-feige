@@ -10,6 +10,16 @@ public class DataDetail {
 
     private Detail remark;
 
+    public DataDetail() {
+    }
+
+    public DataDetail(Detail first, Detail keyword1, Detail keyword2, Detail remark) {
+        this.first = first;
+        this.keyword1 = keyword1;
+        this.keyword2 = keyword2;
+        this.remark = remark;
+    }
+
     public Detail getFirst() {
         return first;
     }

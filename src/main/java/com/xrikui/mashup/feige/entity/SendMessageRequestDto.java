@@ -10,6 +10,22 @@ public class SendMessageRequestDto {
 
     private DataDetail data;
 
+    public SendMessageRequestDto() {
+    }
+
+    public SendMessageRequestDto(String secret, String app_key, String template_id) {
+        this.secret = secret;
+        this.app_key = app_key;
+        this.template_id = template_id;
+    }
+
+    public SendMessageRequestDto(String secret, String app_key, String template_id, DataDetail data) {
+        this.secret = secret;
+        this.app_key = app_key;
+        this.template_id = template_id;
+        this.data = data;
+    }
+
     public String getSecret() {
         return secret;
     }

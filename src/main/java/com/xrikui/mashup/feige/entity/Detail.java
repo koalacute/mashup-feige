@@ -6,6 +6,14 @@ public class Detail {
 
     private String color;
 
+    public Detail() {
+    }
+
+    public Detail(String value, String color) {
+        this.value = value;
+        this.color = color;
+    }
+
     public String getValue() {
         return value;
     }
